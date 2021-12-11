@@ -39,19 +39,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        arrayList.add(sydney);
-        arrayList.add(istanbul);
-        title.add("sidney");
-        title.add("istanbul");
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        for(int i = 0; i<arrayList.size() ; i++){
-            for(int j = 0; i< title.size(); i++){
-                mMap.addMarker(new MarkerOptions().position(arrayList.get(i)).title((String.valueOf(title.get(j)))));
-            }
+        Shop shops[] = Storage.getInstance().shops;
+        for(Shop shop : shops){
+                LatLng latLng = new LatLng(shop.getLatitude(), shop.getLongitude());
+                mMap.addMarker(new MarkerOptions().position(latLng).title(shop.getName())).setTag(shop.getId());
           //  mMap.moveCamera(CameraUpdateFactory.newLatLng(arrayList.get(i)));
         }
         // Add a marker in Sydney and move the camera
@@ -60,10 +56,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(@NonNull Marker marker) {
-                String markerTitle = marker.getTitle();
-                Intent i = new Intent(MapsActivity.this, Details.class);
-                i.putExtra("title", markerTitle);
-                startActivity(i);
+                int id = (Integer) marker.getTag();
+                Intent intent = new Intent(MapsActivity.this, ShopReservation.class);
+                intent.putExtra("id", id);
+                startActivity(intent);
                 return false;
             }
         });
