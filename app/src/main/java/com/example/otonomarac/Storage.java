@@ -7,6 +7,9 @@ public class Storage {
     Shop shop1 = new Shop(1, "Tesla", 50, 50, 7);
     public Shop[] shops = { shop1 };
 
+    //TODO: make dynamic length List
+    public Reservation reservations[] = new Reservation[10];
+
     protected Storage(){}
 
     public static synchronized Storage getInstance() {
@@ -22,6 +25,15 @@ public class Storage {
         for(Shop shop : this.shops){
             if(shop.getId() == id){
                 return shop;
+            }
+        }
+        return null;
+    }
+
+    public synchronized Reservation getReservationById(int id){
+        for(Reservation reservation : this.reservations){
+            if(reservation.getId() == id){
+                return reservation;
             }
         }
         return null;

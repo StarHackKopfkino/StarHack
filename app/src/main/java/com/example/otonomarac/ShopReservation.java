@@ -27,6 +27,7 @@ public class ShopReservation extends AppCompatActivity
     private int days;
     private int hours;
     private int minutes;
+    private int duration;
 
     // Turns hours and minutes into string with "0"s prepended if needed.
     private String normalizeTime(int hours, int minutes){
@@ -75,6 +76,9 @@ public class ShopReservation extends AppCompatActivity
 
         Intent incomingIntent = getIntent();
         shopId = incomingIntent.getIntExtra("id", 0);
+
+        //TODO: to be changed (input)
+        duration = 60;
 
         Shop shop = Storage.getInstance().getShopById(shopId);
         if (shop == null){
@@ -135,5 +139,14 @@ public class ShopReservation extends AppCompatActivity
         this.days = day;
         TextView dateView = findViewById(R.id.dateView);
         dateView.setText(normalizeDate(year, month, day));
+    }
+
+    public void makeReservation(View view) {
+
+        Reservation reservations[] = Storage.getInstance().reservations;
+
+        Reservation newReservation = new Reservation(reservations.length, days, months, years, hours, minutes, duration, shopId);
+
+        reservations[reservations.length] = newReservation;
     }
 }
