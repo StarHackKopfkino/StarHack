@@ -149,7 +149,7 @@ public class ShopReservation extends AppCompatActivity
 
         Reservation newReservation = new Reservation(reservations.length, days, months, years, hours, minutes, duration, shopId);
 
-        reservations[reservations.length] = newReservation;
+        reservations[0] = newReservation;
 
         Context context = getApplicationContext();
         CharSequence text = "Transaction Successful";
