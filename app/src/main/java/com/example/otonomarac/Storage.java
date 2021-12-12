@@ -1,14 +1,15 @@
 package com.example.otonomarac;
 
 
+import java.util.ArrayList;
+
 public class Storage {
     private static Storage mInstance = null;
 
     Shop shop1 = new Shop(1, "Tesla", 50, 50, 7);
     public Shop[] shops = { shop1 };
 
-    //TODO: make dynamic length List
-    public Reservation reservations[] = new Reservation[10];
+    public ArrayList<Reservation> reservations = new ArrayList<Reservation>();
 
     protected Storage(){}
 

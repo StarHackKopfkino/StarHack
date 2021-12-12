@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.view.View;
 import android.widget.TimePicker;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -73,7 +74,7 @@ public class ShopReservation extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop_reservation);
-
+        getSupportActionBar().hide();
         Intent incomingIntent = getIntent();
         shopId = incomingIntent.getIntExtra("id", 0);
 
@@ -95,8 +96,6 @@ public class ShopReservation extends AppCompatActivity
         TextView shopName = findViewById(R.id.shopName);
         shopName.setText(shop.getName());
 
-        TextView shopPrice = findViewById(R.id.shopPrice);
-        shopPrice.setText(Double.toString(shop.getPrice()) + "TL");
 
         // Get current time to initialize time/date
         LocalDateTime now = LocalDateTime.now();
@@ -109,8 +108,6 @@ public class ShopReservation extends AppCompatActivity
         TextView timeView = findViewById(R.id.timeView);
         timeView.setText(normalizeTime(hours, minutes));
 
-        TextView dateView = findViewById(R.id.dateView);
-        dateView.setText(normalizeDate(years, months, days));
     }
 
     public void showDatePickerDialog(View v) {
@@ -137,16 +134,16 @@ public class ShopReservation extends AppCompatActivity
         this.years = year;
         this.months = month;
         this.days = day;
-        TextView dateView = findViewById(R.id.dateView);
-        dateView.setText(normalizeDate(year, month, day));
     }
 
     public void makeReservation(View view) {
 
-        Reservation reservations[] = Storage.getInstance().reservations;
 
-        Reservation newReservation = new Reservation(reservations.length, days, months, years, hours, minutes, duration, shopId);
+        ArrayList<Reservation> reservations = Storage.getInstance().reservations;
 
-        reservations[reservations.length] = newReservation;
+
+        Reservation newReservation = new Reservation(reservations.size(), days, months, years, hours, minutes, duration, Storage.getInstance().getShopById(shopId));
+
+        reservations.add(newReservation);
     }
 }

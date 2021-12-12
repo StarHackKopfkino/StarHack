@@ -26,8 +26,8 @@ public class Reservation { //tarih başlama saati başlama dakikası location s�
     public int getChargeDuration() {
         return chargeDuration;
     }
-    public int getShopId() {
-        return shopId;
+    public Shop getShop() {
+        return shop;
     }
 
 
@@ -41,9 +41,9 @@ public class Reservation { //tarih başlama saati başlama dakikası location s�
     private int minuteOfBeginning;
 
     private int chargeDuration;
-    private int shopId;
+    private Shop shop;
 
-    public Reservation(int id, int day, int month, int year, int hourOfBeginning, int minuteOfBeginning, int chargeDuration, int shopId) {
+    public Reservation(int id, int day, int month, int year, int hourOfBeginning, int minuteOfBeginning, int chargeDuration, Shop shop) {
         this.id = id;
         this.day = day;
         this.month = month;
@@ -51,6 +51,6 @@ public class Reservation { //tarih başlama saati başlama dakikası location s�
         this.hourOfBeginning = hourOfBeginning;
         this.minuteOfBeginning = minuteOfBeginning;
         this.chargeDuration = chargeDuration;
-        this.shopId = shopId;
+        this.shop = shop;
     }
 }
