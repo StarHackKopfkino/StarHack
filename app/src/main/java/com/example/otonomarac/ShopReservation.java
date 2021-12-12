@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.view.View;
 import android.widget.TimePicker;
 
+import java.util.Calendar;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -83,6 +84,12 @@ public class ShopReservation extends AppCompatActivity
         if (shop == null){
             //TODO: exception
         }
+        // Use the current time as the default values for the picker
+        final Calendar c = Calendar.getInstance();
+        int hour = c.get(Calendar.HOUR_OF_DAY);
+        int minute = c.get(Calendar.MINUTE);
+        TimePicker picker=(TimePicker)findViewById(R.id.datePicker1);
+        picker.setIs24HourView(true);
 
         // Set labels
         TextView shopName = findViewById(R.id.shopName);
