@@ -11,6 +11,7 @@ import android.widget.DatePicker;
 import android.widget.TextView;
 import android.view.View;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -22,6 +23,7 @@ public class ShopReservation extends AppCompatActivity
         implements OnTimeSetListener, OnDateSetListener {
 
     private int shopId;
+    private int price;
 
     private int years;
     private int months;
@@ -29,6 +31,8 @@ public class ShopReservation extends AppCompatActivity
     private int hours;
     private int minutes;
     private int duration;
+
+    private TextView editTextTime3;
 
     // Turns hours and minutes into string with "0"s prepended if needed.
     private String normalizeTime(int hours, int minutes){
@@ -140,10 +144,26 @@ public class ShopReservation extends AppCompatActivity
 
 
         ArrayList<Reservation> reservations = Storage.getInstance().reservations;
-
-
         Reservation newReservation = new Reservation(reservations.size(), days, months, years, hours, minutes, duration, Storage.getInstance().getShopById(shopId));
-
         reservations.add(newReservation);
+
+        //String s = editTextTime3.getText();
+        //Double minute = 30.0;
+
+        //Calculator.calculateTotalPrice(minute,Storage.getInstance().getShopById(price));
+        Toast.makeText(getApplicationContext(),"PAYMENT SUCCESSFUL",Toast.LENGTH_LONG).show();
+
+        int id = (Integer) newReservation.getId();
+        Intent intent = new Intent(ShopReservation.this, rezevartation.class);
+        intent.putExtra("id", id);
+        intent.putExtra("day", days);
+        intent.putExtra("month", months);
+        intent.putExtra("year", years);
+        intent.putExtra("hour", hours);
+        intent.putExtra("minute", minutes);
+        //intent.putExtra("duration", id);
+        startActivity(intent);
+
+
     }
 }

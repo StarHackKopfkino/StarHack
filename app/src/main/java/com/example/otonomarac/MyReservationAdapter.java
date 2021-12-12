@@ -15,10 +15,10 @@ import java.util.ArrayList;
 public class MyReservationAdapter extends RecyclerView.Adapter<MyReservationAdapter.CardviewPlaceHolder> {
     //Definition adapter variables
     Context context;
-    private ArrayList<Reservation> itemList;
+    private ArrayList<Shop> itemList;
 
     // Constructor
-    public MyReservationAdapter(ArrayList<Reservation> reservationList, Context context) {
+    public MyReservationAdapter(ArrayList<Shop> reservationList, Context context) {
         this.itemList = reservationList;
         this.context = context;
     }
@@ -43,7 +43,7 @@ public class MyReservationAdapter extends RecyclerView.Adapter<MyReservationAdap
 
     @Override   //Binding data to UI
     public void onBindViewHolder(@NonNull CardviewPlaceHolder holder, int position) {
-        Reservation item = itemList.get(position);
+        Shop item = itemList.get(position);
         holder.isim.setText(item.getShop().getName());
     }
 

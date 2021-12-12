@@ -1,7 +1,5 @@
 package com.example.otonomarac;
 
-import static java.security.AccessController.getContext;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,14 +15,22 @@ import java.util.ArrayList;
 
 public class MyReservation extends AppCompatActivity {
     RecyclerView myRecyclerView;
-    ArrayList<Reservation> lstPlaces;
+    ArrayList<Shop> lstPlaces;
     private int reservationId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_reservations);
+        lstPlaces = new ArrayList<Shop>();
 
+        Shop shop1 = new Shop(1, "Tesla", 48.7791242, 9.0371319, 0.25);
+        Shop shop2 = new Shop(2, "Mercedes-Benz", 48.810335, 9.1461793, 0.50);
+        Shop shop3 = new Shop(3, "Citroen", 48.810639,9.1447093, 0.75);
+        lstPlaces.add(shop1);
+        lstPlaces.add(shop2);
+        lstPlaces.add(shop3);
         Intent incomingIntent = getIntent();
         reservationId = incomingIntent.getIntExtra("id", 0);
 

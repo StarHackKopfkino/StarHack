@@ -6,8 +6,14 @@ import java.util.ArrayList;
 public class Storage {
     private static Storage mInstance = null;
 
-    Shop shop1 = new Shop(1, "Tesla", 50, 50, 7);
-    public Shop[] shops = { shop1 };
+    Shop shop1 = new Shop(1, "TESLA", 48.7791242, 9.0371319, 0.25);
+    Shop shop2 = new Shop(2, "MERCEDES-BENZ", 48.810335, 9.1461793, 0.50);
+    Shop shop3 = new Shop(3, "CITROEN", 48.910639,9.2447093, 0.75);
+    Shop shop4 = new Shop(4, "FORD", 48.815678,9.1457093, 0.75);
+    Shop shop5 = new Shop(5, "RENAULT", 48.810999,9.1547093, 0.75);
+    Shop shop6 = new Shop(6, "VOLKSWAGEN", 48.810345,9.1887093, 0.75);
+    Shop shop7 = new Shop(7, "TOYOTA", 48.810666,9.1987093, 0.75);
+    public Shop[] shops = { shop1 ,shop2,shop3,shop4,shop5,shop6,shop7};
 
     public ArrayList<Reservation> reservations = new ArrayList<Reservation>();
 

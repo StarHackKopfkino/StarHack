@@ -4,6 +4,7 @@ public class Shop {
     public int getId() {
         return id;
     }
+    private Shop shop;
 
     public String getName() {
         return name;
@@ -19,6 +20,9 @@ public class Shop {
 
     public double getPrice() {
         return price;
+    }
+    public Shop getShop() {
+        return shop;
     }
 
     private int id;

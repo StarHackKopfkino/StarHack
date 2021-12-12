@@ -16,6 +16,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OtonomArac">
         <activity
+            android:name=".CustomerScreen"
+            android:exported="false" />
+        <activity
+            android:name=".payment"
+            android:exported="false"
+            android:label="@string/title_activity_payment"
+            android:theme="@style/Theme.OtonomArac.NoActionBar" />
+        <activity
+            android:name=".rezevartation"
+            android:exported="false" />
+        <activity
+            android:name=".rezarvasyon"
+            android:exported="true"
+            android:label="rezervasyon"
+            android:theme="@style/Theme.OtonomArac.NoActionBar" />
+        <activity
             android:name=".Details"
             android:exported="false" />
         <!--
@@ -40,12 +56,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ShopReservation"
             android:exported="true"
-            android:label="ShopReservation">
-        </activity>
+            android:label="ShopReservation" />
     </application>
 
 </manifest>

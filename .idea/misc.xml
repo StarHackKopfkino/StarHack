@@ -3,10 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/busra/AndroidStudioProjects/OtonomArac/app/src/main/res/layout/activity_customer_screen.xml" value="0.1" />
         <entry key="..\:/Users/busra/AndroidStudioProjects/OtonomArac/app/src/main/res/layout/activity_details.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/busra/AndroidStudioProjects/OtonomArac/app/src/main/res/layout/activity_maps.xml" value="0.165625" />
         <entry key="..\:/Users/busra/AndroidStudioProjects/OtonomArac/app/src/main/res/layout/activity_my_reservations.xml" value="0.4" />
+        <entry key="..\:/Users/busra/AndroidStudioProjects/OtonomArac/app/src/main/res/layout/activity_payment.xml" value="0.1" />
+        <entry key="..\:/Users/busra/AndroidStudioProjects/OtonomArac/app/src/main/res/layout/activity_rezevartation.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/busra/AndroidStudioProjects/OtonomArac/app/src/main/res/layout/activity_shop_reservation.xml" value="0.25" />
+        <entry key="..\:/Users/busra/AndroidStudioProjects/OtonomArac/app/src/main/res/layout/content_rezarvasyon.xml" value="0.264" />
         <entry key="..\:/Users/busra/AndroidStudioProjects/OtonomArac/app/src/main/res/layout/fragment_time_picker.xml" value="0.17435897435897435" />
         <entry key="..\:/Users/busra/AndroidStudioProjects/OtonomArac/app/src/main/res/layout/my_reservation_card.xml" value="0.19775641025641025" />
       </map>
