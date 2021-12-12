@@ -2,6 +2,7 @@ package com.example.otonomarac;
 
 import android.app.DatePickerDialog.OnDateSetListener;
 import android.app.TimePickerDialog.OnTimeSetListener;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.widget.DatePicker;
 import android.widget.TextView;
 import android.view.View;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.Calendar;
 import java.time.LocalDateTime;
@@ -148,5 +150,14 @@ public class ShopReservation extends AppCompatActivity
         Reservation newReservation = new Reservation(reservations.length, days, months, years, hours, minutes, duration, shopId);
 
         reservations[reservations.length] = newReservation;
+
+        Context context = getApplicationContext();
+        CharSequence text = "Transaction Successful";
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
     }
+
+
 }
