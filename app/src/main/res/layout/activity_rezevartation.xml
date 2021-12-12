@@ -7,6 +7,19 @@
     tools:context=".rezevartation">
 
     <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="ChargeWay"
+        android:textColor="#03BFB5"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
         android:id="@+id/hour5"
         android:layout_width="100dp"
         android:layout_height="35dp"
@@ -254,7 +267,7 @@
         android:id="@+id/textView19"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:text="MY RESERVATION"
+        android:text="RESERVATION DETAILS"
         android:textColor="#03BFB5"
         android:textSize="35sp"
         android:textStyle="bold"
