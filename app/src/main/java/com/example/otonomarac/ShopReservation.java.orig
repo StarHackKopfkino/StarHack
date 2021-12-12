@@ -166,6 +166,9 @@ public class ShopReservation extends AppCompatActivity
         startActivity(intent);
 
 
+<<<<<<< HEAD
+=======
+        reservations.add(newReservation);
 
         Context context = getApplicationContext();
         CharSequence text = "Transaction Successful";
@@ -173,5 +176,6 @@ public class ShopReservation extends AppCompatActivity
 
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
+>>>>>>> beb843f96c60113602ea13bbb6afaa9b831ef8f4
     }
 }
