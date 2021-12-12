@@ -16,14 +16,14 @@ public class Reservation { //tarih başlama saati başlama dakikası location s�
         return year;
     }
 
-    public int gethourOfBeginning() {
+    public int getHourOfBeginning() {
         return hourOfBeginning;
     }
-    public int getminuteOfBeginning() {
+    public int getmMnuteOfBeginning() {
         return minuteOfBeginning;
     }
 
-    public int getchargeDuration() {
+    public int getChargeDuration() {
         return chargeDuration;
     }
     public int getShopId() {

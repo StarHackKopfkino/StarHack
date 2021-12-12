@@ -7,9 +7,8 @@ public class Storage {
     Shop shop1 = new Shop(1, "Tesla", 50, 50, 7);
     public Shop[] shops = { shop1 };
 
-    Reservation reservation1 = new Reservation(1, 17, 06, 2021, 12,
-            30,30,1);
-    public Reservation[] reservations = { reservation1 };
+    //TODO: make dynamic length List
+    public Reservation reservations[] = new Reservation[10];
 
     protected Storage(){}
 
