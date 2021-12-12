@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/StarHack/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
+        <entry key="..\:/StarHack/app/src/main/res/layout/activity_maps.xml" value="0.20520833333333333" />
+        <entry key="..\:/StarHack/app/src/main/res/layout/activity_my_reservations.xml" value="0.20520833333333333" />
+        <entry key="..\:/StarHack/app/src/main/res/layout/activity_shop_reservation.xml" value="0.20520833333333333" />
+        <entry key="..\:/StarHack/app/src/main/res/layout/fragment_date_picker.xml" value="0.20520833333333333" />
+        <entry key="..\:/StarHack/app/src/main/res/layout/fragment_maps.xml" value="0.20520833333333333" />
+        <entry key="..\:/StarHack/app/src/main/res/layout/fragment_time_picker.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/busra/AndroidStudioProjects/OtonomArac/app/src/main/res/layout/activity_details.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/busra/AndroidStudioProjects/OtonomArac/app/src/main/res/layout/activity_maps.xml" value="0.165625" />
         <entry key="..\:/Users/busra/AndroidStudioProjects/OtonomArac/app/src/main/res/layout/activity_my_reservations.xml" value="0.4" />

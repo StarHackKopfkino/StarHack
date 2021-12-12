@@ -13,10 +13,4 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
-    public void onButtonPress(View view) {
-        Intent intent = new Intent(this, ShopReservation.class);
-        intent.putExtra("id",1);
-        startActivity(intent);
-    }
 }
