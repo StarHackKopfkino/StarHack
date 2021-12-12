@@ -1,7 +1,7 @@
 package com.example.otonomarac;
 
-import android.app.DatePickerDialog;
-import android.app.TimePickerDialog;
+import android.app.DatePickerDialog.OnDateSetListener;
+import android.app.TimePickerDialog.OnTimeSetListener;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,8 +14,7 @@ import android.widget.TimePicker;
 
 
 public class ShopReservation extends AppCompatActivity
-        implements TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
-
+        implements OnTimeSetListener, OnDateSetListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,14 +47,12 @@ public class ShopReservation extends AppCompatActivity
     }
 
 
-    //TODO: does not work idk why
     @Override
     public void onTimeSet(TimePicker timePicker, int hours, int minutes) {
         TextView timeView = findViewById(R.id.timeView);
         timeView.setText(hours + ":" + minutes);
     }
 
-    //TODO: does not work idk why
     @Override
     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
         TextView dateView = findViewById(R.id.dateView);

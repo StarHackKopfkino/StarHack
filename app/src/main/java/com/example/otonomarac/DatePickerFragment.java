@@ -3,6 +3,7 @@ package com.example.otonomarac;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.DatePickerDialog;
+import android.app.DatePickerDialog.OnDateSetListener;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.widget.DatePicker;
@@ -13,7 +14,7 @@ import androidx.fragment.app.DialogFragment;
 import java.util.Calendar;
 
 public class DatePickerFragment extends DialogFragment
-        implements DatePickerDialog.OnDateSetListener {
+        implements OnDateSetListener {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -23,8 +24,13 @@ public class DatePickerFragment extends DialogFragment
         int month = c.get(Calendar.MONTH);
         int day = c.get(Calendar.DAY_OF_MONTH);
 
+        if (!(getActivity() instanceof OnDateSetListener)){
+            //TODO: Exception
+        }
+        OnDateSetListener dateSetListener =  (OnDateSetListener) getActivity();
+
         // Create a new instance of DatePickerDialog and return it
-        return new DatePickerDialog(getActivity(), this, year, month, day);
+        return new DatePickerDialog(getActivity(), dateSetListener, year, month, day);
     }
 
     public void onDateSet(DatePicker view, int year, int month, int day) {
