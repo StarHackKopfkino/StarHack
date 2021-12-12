@@ -7,6 +7,10 @@ public class Storage {
     Shop shop1 = new Shop(1, "Tesla", 50, 50, 7);
     public Shop[] shops = { shop1 };
 
+    Reservation reservation1 = new Reservation(1, 17, 06, 2021, 12,
+            30,30,1);
+    public Reservation[] reservations = { reservation1 };
+
     protected Storage(){}
 
     public static synchronized Storage getInstance() {
@@ -22,6 +26,15 @@ public class Storage {
         for(Shop shop : this.shops){
             if(shop.getId() == id){
                 return shop;
+            }
+        }
+        return null;
+    }
+
+    public synchronized Reservation getReservationById(int id){
+        for(Reservation reservation : this.reservations){
+            if(reservation.getId() == id){
+                return reservation;
             }
         }
         return null;
